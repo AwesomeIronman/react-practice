@@ -1,5 +1,6 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { createPortal } from "react-dom";
 
 function App() {
   return (
@@ -18,6 +19,18 @@ function App() {
           Learn React
         </a>
       </header>
+      {createPortal(
+        <p>
+          Edit <code>src/App.js</code> and save to reload. 1
+        </p>,
+        document.getElementById("another-root"), "another-root-1"
+      )}
+      {createPortal(
+        <p>
+          Edit <code>src/App.js</code> and save to reload. 2
+        </p>,
+        document.getElementById("another-root"), "another-root-2"
+      )}
     </div>
   );
 }
